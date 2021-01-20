@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import SentimentVerySatisfiedIcon from "@material-ui/icons/SentimentVerySatisfied"
 import SentimentSatisfiedIcon from "@material-ui/icons/SentimentSatisfied"
 import MoodBadIcon from "@material-ui/icons/MoodBad"
@@ -31,6 +32,9 @@ export default function Overview() {
   }
   return (
     <div className="tweets">
+      <Helmet>
+        <title>Qondo | Overview</title>
+      </Helmet>
       <h1>Overview</h1>
       <div className="cards">
         <div className="card overview">
