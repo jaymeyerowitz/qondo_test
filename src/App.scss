@@ -224,6 +224,7 @@ main {
   border-radius: 12px;
   width: 30%;
   color: white;
+  font-weight: 700;
   &.good {
     background: linear-gradient(to right top, #82df65, #6cdbeb);
   }
@@ -244,6 +245,11 @@ main {
   }
 }
 
+hr.separator {
+  border-top: 2px solid #658ec6;
+  margin: 40px;
+}
+
 .loader {
   display: flex;
   align-items: center;
@@ -256,6 +262,23 @@ main {
   justify-content: space-between;
   margin-top: 20px;
   label {
+    color: #658ec6;
+  }
+}
+
+.complete-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 20px;
+  border-radius: 12px;
+  background: linear-gradient(to right top, #82df65, #6cdbeb);
+  color: white;
+  &:hover {
+    opacity: 0.8;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+    cursor: pointer;
     color: #658ec6;
   }
 }
