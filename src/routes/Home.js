@@ -142,7 +142,7 @@ export default class Home extends React.Component {
                       className="action-button good"
                     >
                       <SentimentVerySatisfiedIcon />
-                      <span style={{ marginLeft: "15px" }}>Good</span>
+                      <span style={{ marginLeft: "15px" }}>Positive</span>
                     </button>
                     <button
                       onClick={() => this.submitAnswer("neutral")}
@@ -156,7 +156,7 @@ export default class Home extends React.Component {
                       className="action-button bad"
                     >
                       <MoodBadIcon />
-                      <span style={{ marginLeft: "15px" }}>Bad</span>
+                      <span style={{ marginLeft: "15px" }}>Negative</span>
                     </button>
                   </div>
                 </div>
