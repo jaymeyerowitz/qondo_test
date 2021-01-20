@@ -189,6 +189,11 @@ main {
   position: absolute;
   left: 60%;
 }
+
+.progress-count {
+  float: right;
+}
+
 .card-info {
   display: flex;
   flex-direction: column;
@@ -201,4 +206,40 @@ main {
   background: linear-gradient(to right top, #65dfc9, #6cdbeb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.action-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 20px;
+  border-radius: 12px;
+  width: 30%;
+  color: white;
+  &.good {
+    background: linear-gradient(to right top, #82df65, #6cdbeb);
+  }
+  &.neutral {
+    background: linear-gradient(to right top, #659adf, #6cdbeb);
+  }
+  &.bad {
+    background: linear-gradient(to right top, #df8865, #e0c8a1);
+  }
+  &:hover {
+    opacity: 0.8;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+    cursor: pointer;
+    color: #658ec6;
+  }
+  &:focus {
+    outline-style: none;
+  }
 }
