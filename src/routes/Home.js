@@ -43,6 +43,27 @@ export default class Home extends React.Component {
       completedTweets: this.state.completedTweets + 1,
     })
   }
+  submitAnswer = (answer) => {
+    this.setState({ ...this.state, isFetching: true })
+    fetch(`${apiUrl}/answers/${this.state.currentTweet.id}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sentiment: answer }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this.incrementTweetCount()
+        this.setState({
+          ...this.state,
+          currentTweet: data,
+          isFetching: false,
+        })
+      })
+      .catch((e) => {
+        console.log(e)
+        this.setState({ ...this.state, isFetching: false })
+      })
+  }
   render() {
     return (
       <div className="tweets">
@@ -73,25 +94,25 @@ export default class Home extends React.Component {
                 <hr className="separator" />
                 <div className="actions">
                   <button
-                    onClick={this.incrementTweetCount}
+                    onClick={() => this.submitAnswer("positive")}
                     className="action-button good"
                   >
                     <SentimentVerySatisfiedIcon />
-                    <span style={{ marginLeft: "15px" }}>Good</span>
+                    <span style={{ marginLeft: "15px" }}>Positive</span>
                   </button>
                   <button
-                    onClick={this.incrementTweetCount}
+                    onClick={() => this.submitAnswer("neutral")}
                     className="action-button neutral"
                   >
                     <SentimentSatisfiedIcon />
                     <span style={{ marginLeft: "15px" }}>Neutral</span>
                   </button>
                   <button
-                    onClick={this.incrementTweetCount}
+                    onClick={() => this.submitAnswer("negative")}
                     className="action-button bad"
                   >
                     <MoodBadIcon />
-                    <span style={{ marginLeft: "15px" }}>Bad</span>
+                    <span style={{ marginLeft: "15px" }}>Negative</span>
                   </button>
                 </div>
               </div>

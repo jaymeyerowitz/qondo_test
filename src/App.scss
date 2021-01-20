@@ -250,3 +250,12 @@ main {
   justify-content: center;
   width: 100%;
 }
+
+.sentiment-data {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  label {
+    color: #658ec6;
+  }
+}
