@@ -8,8 +8,25 @@ import MoodBadIcon from "@material-ui/icons/MoodBad"
 import LinearProgress from "@material-ui/core/LinearProgress"
 import CheckCircleIcon from "@material-ui/icons/CheckCircle"
 import AddToPhotosIcon from "@material-ui/icons/AddToPhotos"
+import { withStyles } from "@material-ui/core/styles"
 
 const apiUrl = "http://13.245.17.125/api"
+
+const StyledLinearProgress = withStyles({
+  root: {
+    background: "white",
+    borderRadius: 10,
+    border: 0,
+    color: "white",
+    height: 20,
+  },
+  colorPrimary: {
+    backgroundColor: "white",
+  },
+  barColorPrimary: {
+    background: "linear-gradient(to right top, #65dfc9, #6cdbeb)",
+  },
+})(LinearProgress)
 export default class Home extends React.Component {
   constructor(props) {
     super(props)
@@ -83,7 +100,7 @@ export default class Home extends React.Component {
               {this.state.completedTweets} / 10
             </span>
           </h1>
-          <LinearProgress
+          <StyledLinearProgress
             variant="determinate"
             value={(this.state.completedTweets / 10) * 100}
           />
